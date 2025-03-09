@@ -12,6 +12,11 @@ builder.Services.AddControllers();
 builder.Services.AddMemoryCache();
 builder.Services.AddHttpClient();
 
+//Addid Swagger endpoint api explorer
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
+// Add more services
 builder.Services.AddScoped<AggregationService>();
 builder.Services.AddScoped<WeatherApiClient>();
 builder.Services.AddScoped<NewsApiClient>();
@@ -19,6 +24,13 @@ builder.Services.AddScoped<CryptoApiClient>();
 builder.Services.AddSingleton<RequestStatsService>();
 
 var app = builder.Build();
+
+//Check if enviroment is development in order to use swagger (avoid prod exposure)
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
 
 // Middleware
 app.UseMiddleware<RequestStatisticsMiddleware>(); // Add middleware
