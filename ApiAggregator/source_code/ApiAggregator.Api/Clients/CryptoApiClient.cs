@@ -28,6 +28,8 @@ namespace ApiAggregator.Api.Clients
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Crypto API call failed");
+                
+                //TODO: Log error to Database too.
                 return null; // Fallback
             }
         }

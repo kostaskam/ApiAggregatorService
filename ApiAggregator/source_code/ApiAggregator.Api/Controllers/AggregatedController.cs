@@ -17,4 +17,11 @@ public class AggregatedController : ControllerBase
         var result = await _aggregationService.GetAggregatedDataAsync();
         return Ok(result);
     }
+
+    //[HttpPost]
+    //public IActionResult PostAggregatedData()
+    //{
+    //    //test post endpoint
+    //    return Ok("Post seems ok");
+    //}
 }

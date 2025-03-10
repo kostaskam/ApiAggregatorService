@@ -3,6 +3,7 @@ using System.Text.Json;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Configuration;
+using System;
 
 namespace ApiAggregator.Api.Clients
 {
@@ -29,6 +30,7 @@ namespace ApiAggregator.Api.Clients
             catch (Exception ex)
             {
                 _logger.LogError(ex, "News API call failed");
+                //TODO: Log error to Database too.
                 return null; // Fallback
             }
         }
