@@ -17,7 +17,7 @@ namespace ApiAggregator.Api.Clients
         {
             _httpClient = httpClient;
             _logger = logger;
-            _newsApiUrl = configuration["ExternalAPIs:NewsApiUrl"];  // Access the URL from appsettings.json
+            _newsApiUrl = configuration["ExternalAPIs:NewsAPI"];  // Access the URL from appsettings.json
         }
 
         public async Task<object> GetNewsDataAsync()
