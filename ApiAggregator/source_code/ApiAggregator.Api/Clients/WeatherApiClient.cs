@@ -20,8 +20,8 @@ public class WeatherApiClient
         * TODO: Should change from hardcoded values to the lat+long from an api call that gets Users current location.
         * will need to create a "Location" Model for that.
         */
-        _Latitude = 40.64;  
-        _Longitude = 22.94; 
+        _Latitude = 40.64;
+        _Longitude = 22.94;
 
     }
 
@@ -30,7 +30,7 @@ public class WeatherApiClient
         try
         {
             var requestUri = $"{_weatherApiUrl}?latitude={_Latitude}&longitude={_Longitude}&hourly=temperature_2m&timezone=auto";
-            var response = await _httpClient.GetStringAsync(_weatherApiUrl);
+            var response = await _httpClient.GetStringAsync(requestUri);
             return JsonSerializer.Deserialize<object>(response);
         }
         catch (Exception ex)
