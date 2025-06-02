@@ -12,7 +12,7 @@ builder.Services.AddControllers();
 builder.Services.AddMemoryCache();
 builder.Services.AddHttpClient();
 
-//Addid Swagger endpoint api explorer
+//Add Swagger endpoint api explorer
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
@@ -25,7 +25,7 @@ builder.Services.AddSingleton<RequestStatsService>();
 
 var app = builder.Build();
 
-//Check if enviroment is development in order to use swagger (avoid prod exposure)
+//Check if environment is development in order to use swagger (avoid prod exposure)
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
