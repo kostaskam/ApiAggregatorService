@@ -58,4 +58,4 @@ ApiAggregatorService is a .NET 9 Web API designed to aggregate and orchestrate d
 
 ## License
 
-MIT License
+This project is licensed under the [MIT License](LICENSE).
