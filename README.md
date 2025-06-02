@@ -25,6 +25,23 @@ ApiAggregatorService is a .NET 9 Web API designed to aggregate and orchestrate d
 4. **Access the Swagger UI:**  
    Visit [https://localhost:7249/swagger/index.html](https://localhost:7249/swagger/index.html) in your browser.
 
+## Running with Docker
+
+1. **Change to root Directory (where docker-compose.yml is located)**
+    ```sh
+   cd ..
+   ```
+2. **Build the Docker image:**
+   ```sh
+   docker compose build
+   ```
+3. **Run the container:**
+   ```sh
+   docker compose up -d
+   ```
+4. **Access the API:**  
+   Visit [http://localhost:7249/swagger/index.html](http://localhost:7249/swagger/index.html) in your browser.
+
 ## Project Structure
 
 - `source_code/ApiAggregator.Api/Clients/` – API client implementations
