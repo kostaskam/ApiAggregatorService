@@ -1,0 +1,15 @@
+services:
+
+  ApiAggregator:
+    image: apiaggregator
+    build:
+      context: .
+      dockerfile: ApiAggregator/Dockerfile
+    restart: on-failure
+    ports:
+      - 7249:7249
+    networks:
+      - apiagg
+  
+networks:
+  apiagg:
